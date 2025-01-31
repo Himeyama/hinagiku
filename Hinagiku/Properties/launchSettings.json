@@ -1,9 +1,9 @@
 {
     "profiles": {
-      "WinUIExample (Package)": {
+      "Hinagiku (Package)": {
         "commandName": "MsixPackage"
       },
-      "WinUIExample (Unpackaged)": {
+      "Hinagiku (Unpackaged)": {
         "commandName": "Project"
       }
     }

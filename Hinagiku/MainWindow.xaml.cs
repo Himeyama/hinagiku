@@ -7,7 +7,7 @@ using Windows.Networking.NetworkOperators;
 using Windows.System;
 
 
-namespace WinUIExample;
+namespace Hinagiku;
 public sealed partial class MainWindow : Window
 {
     public MainWindow()

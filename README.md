@@ -1,4 +1,4 @@
-# WinUIExample
+# Hinagiku
 WinUI3 アプリの例とインストーラーを作成する例です。
 
 ![image](https://github.com/user-attachments/assets/ae07aa17-48c2-46d9-a1e8-2c0ff4810034)
