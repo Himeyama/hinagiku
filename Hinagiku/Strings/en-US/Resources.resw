@@ -23,4 +23,7 @@
   <data name="ZoomInText.Text" xml:space="preserve"><value>Ctrl + Plus (+)</value></data>
   <data name="ZoomOutText.Text" xml:space="preserve"><value>Ctrl + Minus (-)</value></data>
   <data name="AppTitleText.Text" xml:space="preserve"><value>App title</value></data>
+  <data name="Connect.Content" xml:space="preserve"><value>Connect</value></data>
+  <data name="Disconnect.Content" xml:space="preserve"><value>Disconnect</value></data>
+  <data name="SelectSerialPort.PlaceholderText" xml:space="preserve"><value>Select a serial port</value></data>
 </root>

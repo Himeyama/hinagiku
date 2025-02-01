@@ -23,4 +23,7 @@
   <data name="ZoomInText.Text" xml:space="preserve"><value>Ctrl + プラス記号 (+)</value></data>
   <data name="ZoomOutText.Text" xml:space="preserve"><value>Ctrl + マイナス記号 (-)</value></data>
   <data name="AppTitleText.Text" xml:space="preserve"><value>アプリタイトル</value></data>
+  <data name="Connect.Content" xml:space="preserve"><value>接続</value></data>
+  <data name="Disconnect.Content" xml:space="preserve"><value>切断</value></data>
+  <data name="SelectSerialPort.PlaceholderText" xml:space="preserve"><value>シリアルポートを選択してください</value></data>
 </root>
