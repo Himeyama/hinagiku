@@ -45,6 +45,7 @@
         <Grid Visibility="Collapsed">
             <TextBlock x:Uid="ZoomInText" Name="ZoomInText"/>
             <TextBlock x:Uid="ZoomOutText" Name="ZoomOutText"/>
+            <TextBlock x:FieldModifier="Public" x:Uid="NoSelectedSerialPort" Name="NoSelectedSerialPort" />
         </Grid>
     </Grid>
 </Window>

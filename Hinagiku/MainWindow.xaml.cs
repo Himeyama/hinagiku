@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Common;
 using Microsoft.UI.Xaml;
 using ScottPlot.WinUI;
@@ -9,10 +10,12 @@ public sealed partial class MainWindow : Window
 
     public static WinUIPlot winUIPlot;
     public static DataStreamer dataStreamer;
+    public static MainWindow mainWindow;
 
     public MainWindow()
     {
         InitializeComponent();
+        mainWindow = this;
 
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(AppTitleBar);
@@ -48,12 +51,12 @@ public sealed partial class MainWindow : Window
         RefreshSerialPort();
     }
 
-    void ConnectButton_Click(object sender, RoutedEventArgs e)
+    async void ConnectButton_Click(object sender, RoutedEventArgs e)
     {
         string portName = SelectSerialPort.SelectedItem as string;
         serialConsole.portName = portName;
         serialConsole.baudRate = int.Parse(SelectBaudRate.SelectedItem as string);
-        if(serialConsole.OpenSerialPort()){
+        if(await serialConsole.OpenSerialPortAsync()){
             ConnectButton.Visibility = Visibility.Collapsed;
             DisconnectButton.Visibility = Visibility.Visible;
         }

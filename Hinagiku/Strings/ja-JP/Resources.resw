@@ -26,4 +26,5 @@
   <data name="Connect.Content" xml:space="preserve"><value>接続</value></data>
   <data name="Disconnect.Content" xml:space="preserve"><value>切断</value></data>
   <data name="SelectSerialPort.PlaceholderText" xml:space="preserve"><value>シリアルポートを選択してください</value></data>
+  <data name="NoSelectedSerialPort.Text" xml:space="preserve"><value>シリアルポートが選択されていません</value></data>
 </root>

@@ -15,7 +15,7 @@ public partial class DataStreamer
     public DataStreamer()
     {
         UpdatePlotTimer.Tick += UpdatePlotTimer_Tick;
-        UpdatePlotTimer.Interval = TimeSpan.FromMilliseconds(10);
+        UpdatePlotTimer.Interval = TimeSpan.FromMilliseconds(5);
         UpdatePlotTimer.Start();
 
         Streamer = plot.Plot.Add.DataStreamer(500);
@@ -24,9 +24,25 @@ public partial class DataStreamer
         Streamer.ViewScrollLeft();
 
         plot.Plot.Axes.SetLimits(0, 500, -1, 1);
-        
+
+        ScottPlot.TickGenerators.NumericAutomatic myTickGenerator = new()
+        {
+            LabelFormatter = CustomFormatter
+        };
+        plot.Plot.Axes.Bottom.TickGenerator = myTickGenerator;
+
         // plot.Plot.Axes.ContinuouslyAutoscale = true;
         // Streamer.ManageAxisLimits = true;
+    }
+
+    static string CustomFormatter(double position)
+    {
+        if (position == 0)
+            return "0";
+        else if (position > 0)
+            return $"+{position / 100.0}";
+        else
+            return $"({-position/ 100.0})";
     }
 
     public void AddValue(double value)

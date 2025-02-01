@@ -4,6 +4,7 @@ using Hinagiku;
 using System.Management;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Common;
 
@@ -83,7 +84,8 @@ public class SerialConsole
         }
         catch (Exception ex)
         {
-            Status.AddMessage("Error reading from serial port: " + ex.Message);
+            // Status.AddMessage("Error reading from serial port: " + ex.Message);
+            Task.Run(() => {_ = Dialog.ShowError(MainWindow.mainWindow.Content, ex.Message);});
         }
     }
 
@@ -104,11 +106,17 @@ public class SerialConsole
         return serialPort;
     }
 
-    public bool OpenSerialPort()
+    public async Task<bool> OpenSerialPortAsync()
     {
+        if(portName == null){
+            _ = await Dialog.ShowError(MainWindow.mainWindow.Content, MainWindow.mainWindow.NoSelectedSerialPort.Text);
+            return false;
+        }
+
         try{
             InitializeSerialPort();
         }catch (Exception ex){
+            _ = await Dialog.ShowError(MainWindow.mainWindow.Content, ex.Message);
             Status.AddMessage("Error initializing serial port: " + ex.Message);
             return false;
         }
@@ -121,6 +129,7 @@ public class SerialConsole
         catch (Exception ex)
         {
             Status.AddMessage("Error opening serial port: " + ex.Message);
+
             return false;
         }
         connected = true;

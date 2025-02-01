@@ -26,4 +26,5 @@
   <data name="Connect.Content" xml:space="preserve"><value>Connect</value></data>
   <data name="Disconnect.Content" xml:space="preserve"><value>Disconnect</value></data>
   <data name="SelectSerialPort.PlaceholderText" xml:space="preserve"><value>Select a serial port</value></data>
+  <data name="NoSelectedSerialPort.Text" xml:space="preserve"><value>No serial port selected</value></data>
 </root>
