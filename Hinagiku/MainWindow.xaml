@@ -19,7 +19,7 @@
         <Grid x:Name="AppTitleBar" />
 
         <Grid Grid.Row="1">
-            <Grid Margin="16, 8, 16, 8" RowDefinitions="Auto, *">
+            <Grid Margin="16, 8, 16, 0" RowDefinitions="Auto, *">
                 <Grid ColumnDefinitions="*, Auto, Auto, Auto, Auto">
                     <ComboBox HorizontalAlignment="Stretch" Name="SelectSerialPort" x:Uid="SelectSerialPort" PlaceholderText="Select a serial port" />
                     <Button Margin="8, 0, 0, 0" Grid.Column="1" Click="RefreshButton_Click">
@@ -29,8 +29,12 @@
                     <Button x:Uid="Connect" Style="{StaticResource AccentButtonStyle}" Margin="8, 0, 0, 0" Grid.Column="3" Content="Connect" Click="ConnectButton_Click" Name="ConnectButton" />
                     <Button x:Uid="Disconnect" Visibility="Collapsed" Style="{StaticResource AccentButtonStyle}" Margin="8, 0, 0, 0" Grid.Column="4" Content="Disconnect" Name="DisconnectButton" Click="DisconnectButton_Click" />
                 </Grid>
-                <Grid Grid.Row="1" Margin="0, 16, 0, 0">
-                    <ScottPlot:WinUIPlot x:Name="WinUIPlot1"/>
+                <Grid Grid.Row="1" Margin="0, 8, 0, 0">
+                    <Grid>
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="{StaticResource CardStrokeColorDefaultBrush}">
+                            <ScottPlot:WinUIPlot Padding="8" x:Name="WinUIPlot1"/>
+                        </Border>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>
